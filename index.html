@@ -466,37 +466,77 @@
     <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">Od 5 mln zł do 105 mln zł w 5 lat.</h2>
     <p class="text-xl text-slate-600 mb-10">Trójkanałowa dystrybucja od dnia 1: D2C + lecznice + schroniska.</p>
 
-    <!-- Revenue chart -->
-    <div class="bg-white rounded-3xl border border-slate-200 p-6 mb-6 shadow-sm">
-      <div class="flex items-baseline justify-between mb-5">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Prognoza przychodów (mln zł)</p>
-        <p class="text-xs text-emerald-600 font-bold">CAGR ~110%</p>
-      </div>
-      <div class="flex items-end gap-4 h-64">
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <span class="font-display font-bold text-teal-700 text-lg">5,2</span>
-          <div class="w-full bg-gradient-to-t from-teal-200 to-teal-100 rounded-t-xl border-t-2 border-teal-400" style="height: 5%"></div>
-          <span class="text-xs text-slate-600 font-bold">2024</span>
+    <!-- Revenue chart — bold, attention-grabbing -->
+    <div class="relative bg-gradient-to-br from-white via-teal-50/30 to-cyan-50/30 rounded-3xl border-2 border-teal-200 p-6 mb-6 shadow-xl shadow-teal-100/40 overflow-hidden">
+      <!-- decorative bg -->
+      <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-teal-200/30 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-cyan-200/30 blur-3xl pointer-events-none"></div>
+
+      <div class="relative">
+        <div class="flex items-start justify-between mb-6 flex-wrap gap-3">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-teal-700">Prognoza przychodów</p>
+            <p class="text-2xl font-display font-bold text-slate-900 mt-0.5">mln zł rocznie</p>
+          </div>
+          <div class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full shadow-lg shadow-emerald-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <span class="font-bold text-sm">20× wzrostu w 5 lat</span>
+          </div>
         </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <span class="font-display font-bold text-teal-700 text-lg">17,6</span>
-          <div class="w-full bg-gradient-to-t from-teal-300 to-teal-100 rounded-t-xl border-t-2 border-teal-400" style="height: 17%"></div>
-          <span class="text-xs text-slate-600 font-bold">2025</span>
+
+        <!-- Bars with horizontal gridlines -->
+        <div class="relative h-72 sm:h-80 mb-3">
+          <!-- gridlines -->
+          <div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+            <div class="border-t border-dashed border-slate-200 relative"><span class="absolute -top-2 -left-1 text-[10px] text-slate-400 font-mono bg-white px-1">100</span></div>
+            <div class="border-t border-dashed border-slate-200 relative"><span class="absolute -top-2 -left-1 text-[10px] text-slate-400 font-mono bg-white px-1">75</span></div>
+            <div class="border-t border-dashed border-slate-200 relative"><span class="absolute -top-2 -left-1 text-[10px] text-slate-400 font-mono bg-white px-1">50</span></div>
+            <div class="border-t border-dashed border-slate-200 relative"><span class="absolute -top-2 -left-1 text-[10px] text-slate-400 font-mono bg-white px-1">25</span></div>
+            <div class="border-t border-slate-300 relative"><span class="absolute -top-2 -left-1 text-[10px] text-slate-400 font-mono bg-white px-1">0</span></div>
+          </div>
+
+          <!-- bars -->
+          <div class="absolute inset-0 flex items-end gap-3 sm:gap-5 pl-8">
+            <div class="flex-1 flex flex-col items-center justify-end h-full">
+              <span class="font-display font-bold text-teal-700 text-base mb-1">5,2</span>
+              <div class="w-full bg-gradient-to-t from-teal-300 to-teal-200 rounded-t-xl shadow-md shadow-teal-200/40" style="height: 5%"></div>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end h-full">
+              <span class="font-display font-bold text-teal-700 text-base mb-1">17,6</span>
+              <div class="w-full bg-gradient-to-t from-teal-400 to-teal-300 rounded-t-xl shadow-md shadow-teal-200/50" style="height: 17%"></div>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end h-full">
+              <span class="font-display font-bold text-teal-700 text-base mb-1">37</span>
+              <div class="w-full bg-gradient-to-t from-teal-500 to-teal-400 rounded-t-xl shadow-md shadow-teal-300/50" style="height: 35%"></div>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end h-full">
+              <span class="font-display font-bold text-teal-800 text-lg mb-1">67</span>
+              <div class="w-full bg-gradient-to-t from-cyan-600 to-teal-500 rounded-t-xl shadow-lg shadow-cyan-300/50" style="height: 64%"></div>
+            </div>
+            <!-- highlighted final bar -->
+            <div class="flex-1 flex flex-col items-center justify-end h-full relative">
+              <span class="absolute -top-1 z-10 inline-flex items-center gap-1 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-2 py-0.5 rounded-full text-[10px] font-bold shadow-md whitespace-nowrap">⭐ Cel</span>
+              <span class="font-display font-bold text-cyan-900 text-2xl mb-1 mt-5">105</span>
+              <div class="w-full bg-gradient-to-t from-cyan-700 via-teal-600 to-cyan-500 rounded-t-xl shadow-2xl shadow-cyan-400/50 ring-2 ring-amber-300" style="height: 100%"></div>
+            </div>
+          </div>
         </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <span class="font-display font-bold text-teal-700 text-lg">37</span>
-          <div class="w-full bg-gradient-to-t from-teal-400 to-teal-200 rounded-t-xl border-t-2 border-teal-500" style="height: 35%"></div>
-          <span class="text-xs text-slate-600 font-bold">2026</span>
+
+        <!-- Year labels -->
+        <div class="flex gap-3 sm:gap-5 pl-8 mb-4">
+          <div class="flex-1 text-center text-xs font-bold text-slate-600">2024</div>
+          <div class="flex-1 text-center text-xs font-bold text-slate-600">2025</div>
+          <div class="flex-1 text-center text-xs font-bold text-slate-600">2026</div>
+          <div class="flex-1 text-center text-xs font-bold text-slate-600">2027</div>
+          <div class="flex-1 text-center text-xs font-bold text-cyan-900">2028</div>
         </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <span class="font-display font-bold text-teal-800 text-lg">67</span>
-          <div class="w-full bg-gradient-to-t from-teal-500 to-teal-300 rounded-t-xl border-t-2 border-teal-600" style="height: 64%"></div>
-          <span class="text-xs text-slate-600 font-bold">2027</span>
-        </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <span class="font-display font-bold text-teal-900 text-xl">105</span>
-          <div class="w-full bg-gradient-to-t from-teal-600 to-teal-400 rounded-t-xl border-t-2 border-teal-700 shadow-lg shadow-teal-200" style="height: 100%"></div>
-          <span class="text-xs text-slate-700 font-bold">2028</span>
+
+        <!-- Growth annotations -->
+        <div class="grid grid-cols-4 gap-3 sm:gap-5 pl-8 pr-[calc(20%+1rem)]">
+          <div class="text-center text-[10px] font-bold text-emerald-600">↑ 238%</div>
+          <div class="text-center text-[10px] font-bold text-emerald-600">↑ 110%</div>
+          <div class="text-center text-[10px] font-bold text-emerald-600">↑ 81%</div>
+          <div class="text-center text-[10px] font-bold text-emerald-700">↑ 57%</div>
         </div>
       </div>
     </div>
