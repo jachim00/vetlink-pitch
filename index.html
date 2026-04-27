@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vetlink — Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html, body { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .font-display { font-family: 'Quicksand', 'Inter', sans-serif; letter-spacing: -0.02em; }
+
+  /* Slide container — center, full viewport, smooth fade */
+  body { background: linear-gradient(135deg, #f0fdfa 0%, #ecfeff 50%, #f0f9ff 100%); }
+  [data-slide] {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    animation: fadeIn 0.4s ease-out;
+  }
+  [data-slide].hidden { display: none; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .slide-inner {
+    width: 100%;
+    max-width: 72rem;
+  }
+
+  /* Brand */
+  .brand-grad { background: linear-gradient(135deg, #0d9488 0%, #0891b2 50%, #0369a1 100%); }
+  .brand-text { background: linear-gradient(135deg, #0d9488 0%, #0e7490 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* Decorative paw pattern */
+  .paw-pattern {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='%2314b8a6' fill-opacity='0.05'><path d='M30 50c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5zm15-15c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5zm20 0c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5zm15 15c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5zm-25 5c5 0 10 4 10 10v6c0 4-3 7-7 7-2 0-3-1-4-2-2-2-4-3-7-3-3 0-5-2-5-5 0-7 6-13 13-13z'/></g></svg>");
+  }
+
+  /* Mock phone for demo slide */
+  .phone {
+    width: 280px;
+    height: 580px;
+    border: 12px solid #1e293b;
+    border-radius: 38px;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.4);
+  }
+  .phone iframe { width: 100%; height: 100%; border: 0; transform-origin: top left; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================== -->
+<!-- SLIDE 1 — COVER                                                 -->
+<!-- ============================================================== -->
+<section data-slide class="paw-pattern">
+  <div class="slide-inner text-center">
+    <div class="inline-flex items-center gap-3 mb-8">
+      <div class="w-16 h-16 rounded-3xl brand-grad flex items-center justify-center shadow-2xl shadow-teal-200/60 rotate-[-6deg]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/><circle cx="4" cy="8" r="2"/></svg>
+      </div>
+      <span class="font-display text-3xl font-bold text-slate-800">Vetlink</span>
+    </div>
+    <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-slate-900 mb-6 leading-tight">
+      Karta zdrowia psa<br>
+      <span class="brand-text">w 2 sekundy.</span>
+    </h1>
+    <p class="text-lg sm:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed">Bezpieczeństwo. Dostęp. Spokój.<br>Zawsze połączony ze zdrowiem Twojego psa.</p>
+    <div class="inline-flex items-center gap-6 text-sm text-slate-500">
+      <span class="font-semibold">Pitch Deck</span>
+      <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+      <span>Pre-seed €600k</span>
+      <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+      <span>2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 2 — HOOK / STORY                                          -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-6">Wyobraź sobie</p>
+    <blockquote class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-10">
+      „Burek o 23:00 wymiotuje.<br>
+      Dyżurny weterynarz nie zna<br>
+      <span class="brand-text">alergii na penicylinę.</span>"
+    </blockquote>
+    <p class="text-xl sm:text-2xl text-slate-600 mb-12 max-w-3xl leading-relaxed">
+      Tysiące psów rocznie cierpi przez błędy medyczne wynikające z braku dostępu do danych.
+    </p>
+    <div class="bg-white border-l-4 border-teal-500 rounded-r-2xl p-6 max-w-2xl shadow-lg">
+      <p class="text-2xl sm:text-3xl font-bold text-slate-800 font-display">Vetlink rozwiązuje to w 2 sekundy.</p>
+      <p class="text-slate-500 mt-2">Skan tagu → dane → decyzja medyczna.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 3 — PROBLEM                                               -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Problem</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-12">Dane medyczne psów są rozbite.</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-700"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <p class="font-bold text-slate-800 text-lg mb-2">Rozproszone</p>
+        <p class="text-slate-600 leading-relaxed">Kliniki, paszporty papierowe, aplikacje pojedynczych lecznic, pamięć właściciela.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        </div>
+        <p class="font-bold text-slate-800 text-lg mb-2">Niedostępne</p>
+        <p class="text-slate-600 leading-relaxed">Poza godzinami „swojego" wetera, na urlopie, po wypadku — danych po prostu nie ma.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-700"><path d="M12 8v4"/><path d="M12 16h.01"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <p class="font-bold text-slate-800 text-lg mb-2">Błędy medyczne</p>
+        <p class="text-slate-600 leading-relaxed">Lek na który zwierzę jest uczulone, opóźniona diagnoza, koszty właściciela i klinik.</p>
+      </div>
+    </div>
+
+    <div class="mt-12 inline-flex items-baseline gap-3 bg-slate-900 text-white px-6 py-4 rounded-2xl">
+      <span class="font-display text-4xl font-bold">~108M</span>
+      <span class="text-slate-300">incydentów ratunkowych rocznie w UE, w których dostęp do danych zmienia decyzję</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 4 — SOLUTION                                              -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Rozwiązanie</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">NFC tag + cloud.</h2>
+    <p class="text-xl text-slate-600 mb-12 max-w-2xl">Skan, dane, decyzja — bez aplikacji, bez logowania, bez tarcia.</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-7 border-2 border-teal-200">
+        <div class="text-5xl mb-4">🏷️</div>
+        <p class="font-bold text-slate-900 text-xl mb-2">1. Vetlink Tag</p>
+        <p class="text-slate-600">NFC NTAG215 na obroży. Wodoodporny IP67, MTBF 10 lat, koszt produkcji €2.</p>
+      </div>
+      <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-7 border-2 border-teal-200">
+        <div class="text-5xl mb-4">📱</div>
+        <p class="font-bold text-slate-900 text-xl mb-2">2. Skan</p>
+        <p class="text-slate-600">Każdy telefon iOS 11+/Android 4.4+. Otwiera stronę web. Bez aplikacji, bez PIN-u.</p>
+      </div>
+      <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-7 border-2 border-teal-200">
+        <div class="text-5xl mb-4">⚡</div>
+        <p class="font-bold text-slate-900 text-xl mb-2">3. Dane w 2s</p>
+        <p class="text-slate-600">Imię, alergie, leki, choroby przewlekłe, kontakt awaryjny. Pełna historia za PIN-em.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5 text-sm">
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-teal-700"><path d="M12 22s-8-4.5-8-11.5a8 8 0 0 1 16 0c0 7-8 11.5-8 11.5z"/><circle cx="12" cy="10.5" r="2.5"/></svg></div>
+        <div><p class="font-bold text-slate-800">Lost mode</p><p class="text-slate-500 text-xs">Telefon + lokalizacja</p></div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-teal-700"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></div>
+        <div><p class="font-bold text-slate-800">Kalendarz szczepień</p><p class="text-slate-500 text-xs">Auto-przypomnienia</p></div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-teal-700"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+        <div><p class="font-bold text-slate-800">OCR z dokumentu</p><p class="text-slate-500 text-xs">AI rozpoznaje 94%</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 5 — DEMO                                                  -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Demo</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-2">Działający prototyp.</h2>
+    <p class="text-xl text-slate-600 mb-10">Zeskanuj tag → strona otwiera się w 2s. Bez instalacji.</p>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="flex justify-center">
+        <div class="phone">
+          <iframe src="https://jachim00.github.io/vetlink/" loading="lazy" style="width: 280px; height: 580px;"></iframe>
+        </div>
+      </div>
+      <div>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full brand-grad text-white text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">1</div>
+            <div><p class="font-bold text-slate-800">Karta po skanie</p><p class="text-slate-600 text-sm">Imię, alergie, leki, choroby — natychmiast.</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full brand-grad text-white text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">2</div>
+            <div><p class="font-bold text-slate-800">PIN gate</p><p class="text-slate-600 text-sm">Pełna historia + dokumenty po podaniu PIN-u (demo: 1234).</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full brand-grad text-white text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">3</div>
+            <div><p class="font-bold text-slate-800">Lost mode</p><p class="text-slate-600 text-sm">Jeden klik → publiczny widok zmienia się w czerwony alarm z numerem.</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full brand-grad text-white text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">4</div>
+            <div><p class="font-bold text-slate-800">Onboarding 90s</p><p class="text-slate-600 text-sm">Aktywacja nowego taga w cztery kroki.</p></div>
+          </div>
+        </div>
+        <a href="https://jachim00.github.io/vetlink/" target="_blank" class="inline-flex items-center gap-2 brand-grad text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-teal-200 hover:shadow-xl transition">
+          Otwórz demo →
+        </a>
+        <p class="text-xs text-slate-500 mt-3 font-mono">jachim00.github.io/vetlink</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 6 — MARKET                                                -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Rynek</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-2">90 mln psów. €5,4 mld rynku.</h2>
+    <p class="text-xl text-slate-600 mb-12">CAGR 8–15%. Pozytywny vector demograficzny.</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white rounded-3xl p-8 border-2 border-slate-200">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">TAM</p>
+        <p class="font-display text-5xl font-bold text-slate-900 mb-1">€12 mld</p>
+        <p class="text-sm text-slate-500">200 mln zwierząt domowych UE × €60 LTV</p>
+      </div>
+      <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-8 border-2 border-teal-300 shadow-lg shadow-teal-100/60">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-2">SAM</p>
+        <p class="font-display text-5xl font-bold text-slate-900 mb-1">€5,4 mld</p>
+        <p class="text-sm text-slate-600">90 mln psów EU (start: PL+DACH)</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 border-2 border-slate-200">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">SOM 5Y</p>
+        <p class="font-display text-5xl font-bold text-slate-900 mb-1">€54 mln</p>
+        <p class="text-sm text-slate-500">1% SAM = 900 tys. aktywnych pet-tagów</p>
+      </div>
+    </div>
+
+    <div class="bg-slate-900 text-white rounded-2xl p-6">
+      <p class="text-sm text-slate-400 mb-3 font-semibold uppercase tracking-wider">Trendy zasilające popyt</p>
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <div>🐕 <span class="text-slate-300">Humanizacja zwierząt — pies = członek rodziny</span></div>
+        <div>💸 <span class="text-slate-300">Wzrost wydatków na pet-care 8%/rok</span></div>
+        <div>📱 <span class="text-slate-300">95% adopcji smartfonów w EU</span></div>
+      </div>
+    </div>
+    <p class="text-xs text-slate-400 mt-3">Źródła: FEDIAF 2023, Eurostat 2024.</p>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 7 — BUSINESS MODEL                                        -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Model biznesowy</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">Hardware + subskrypcja.</h2>
+    <p class="text-xl text-slate-600 mb-10">Trzy źródła przychodu, każde z własną dynamiką.</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Free</div>
+        <p class="font-display text-4xl font-bold text-slate-900 mb-1">€0</p>
+        <p class="text-sm text-slate-500 mb-5">+ tag €44 jednorazowo</p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li>✓ 1 zwierzę</li>
+          <li>✓ Public scan</li>
+          <li>✓ Lost mode</li>
+          <li>✓ Podstawowe dane</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-teal-500 to-cyan-600 text-white rounded-3xl p-6 shadow-2xl shadow-teal-300/60 transform sm:scale-105 ring-4 ring-teal-200/50">
+        <div class="text-xs font-bold uppercase tracking-wider text-teal-100 mb-3">Premium ⭐</div>
+        <p class="font-display text-4xl font-bold mb-1">€3,99<span class="text-lg opacity-70">/mc</span></p>
+        <p class="text-sm text-teal-100 mb-5">+ tag €44, sub 3mc gratis</p>
+        <ul class="space-y-2 text-sm text-teal-50">
+          <li>✓ Pełna historia + dokumenty</li>
+          <li>✓ Kalendarz szczepień</li>
+          <li>✓ OCR (10/mc)</li>
+          <li>✓ Vet API (lekarz dopisuje)</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Family</div>
+        <p class="font-display text-4xl font-bold text-slate-900 mb-1">€7,99<span class="text-lg text-slate-400">/mc</span></p>
+        <p class="text-sm text-slate-500 mb-5">+ tagi €44 każdy</p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li>✓ Do 5 zwierząt</li>
+          <li>✓ OCR unlimited</li>
+          <li>✓ Współwłaściciel + dziedziczenie</li>
+          <li>✓ Integracja z PIMS klinik</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-4 text-sm">
+      <div class="bg-slate-50 rounded-xl p-4">
+        <p class="font-bold text-slate-800 mb-1">B2C</p>
+        <p class="text-slate-500">Tag + sub. Rdzeń przychodów Y1–Y2.</p>
+      </div>
+      <div class="bg-slate-50 rounded-xl p-4">
+        <p class="font-bold text-slate-800 mb-1">B2B kliniki</p>
+        <p class="text-slate-500">€99/mc/lokalizacja + €0,50 import historii. V3+.</p>
+      </div>
+      <div class="bg-slate-50 rounded-xl p-4">
+        <p class="font-bold text-slate-800 mb-1">Partnerstwa</p>
+        <p class="text-slate-500">Affiliate ubezpieczeń €15–30 / wykupiona polisa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 8 — UNIT ECONOMICS                                        -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Unit economics</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">Liczby działają.</h2>
+    <p class="text-xl text-slate-600 mb-10">Hardware z 86% marżą + sub z 80% gross margin = zdrowy biznes.</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      <div class="bg-white rounded-3xl p-6 border border-slate-200 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">LTV</p>
+        <p class="font-display text-4xl sm:text-5xl font-bold brand-text">€150</p>
+        <p class="text-xs text-slate-500 mt-2">€38 hardware + 28mc × €3,99</p>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-slate-200 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">CAC</p>
+        <p class="font-display text-4xl sm:text-5xl font-bold text-slate-900">€15</p>
+        <p class="text-xs text-slate-500 mt-2">Mix D2C / vet / schronisko</p>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border-2 border-teal-300 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">LTV/CAC</p>
+        <p class="font-display text-4xl sm:text-5xl font-bold brand-text">9,9×</p>
+        <p class="text-xs text-slate-500 mt-2">Zdrowy benchmark &gt; 3×</p>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-slate-200 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Payback</p>
+        <p class="font-display text-4xl sm:text-5xl font-bold text-slate-900">4,5<span class="text-2xl">mc</span></p>
+        <p class="text-xs text-slate-500 mt-2">CAC odbity w pół roku</p>
+      </div>
+    </div>
+
+    <div class="bg-slate-900 text-white rounded-2xl p-6">
+      <p class="text-sm text-slate-400 mb-4 font-semibold uppercase tracking-wider">Marże</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <p class="text-3xl font-bold font-display mb-1">86%</p>
+          <p class="text-sm text-slate-300">Marża hardware (€38 / €44)</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold font-display mb-1">80%</p>
+          <p class="text-sm text-slate-300">Gross margin subskrypcji</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold font-display mb-1">7,8k</p>
+          <p class="text-sm text-slate-300">Płacących userów do break-even</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 9 — COMPETITION                                           -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Konkurencja</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">Nikt nie łączy NFC + cloud + emergency-first.</h2>
+    <p class="text-xl text-slate-600 mb-10">Microchipy mają tylko ID, aplikacje wymagają logowania, PIMS są zamknięte w klinice.</p>
+
+    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+      <table class="w-full text-sm">
+        <thead class="bg-slate-50 border-b border-slate-200">
+          <tr>
+            <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-600">Cecha</th>
+            <th class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50">Vetlink</th>
+            <th class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-slate-500">ISO chip</th>
+            <th class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-slate-500">Petsy / app</th>
+            <th class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-slate-500">PIMS klinika</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr><td class="px-4 py-3 font-semibold text-slate-700">ID zwierzęcia</td><td class="px-4 py-3 text-center bg-teal-50/50 text-teal-600 text-lg">✓</td><td class="px-4 py-3 text-center text-emerald-600 text-lg">✓</td><td class="px-4 py-3 text-center text-emerald-600 text-lg">✓</td><td class="px-4 py-3 text-center text-emerald-600 text-lg">✓</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-slate-700">Dane medyczne</td><td class="px-4 py-3 text-center bg-teal-50/50 text-teal-600 text-lg">✓</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td><td class="px-4 py-3 text-center text-emerald-600 text-lg">✓</td><td class="px-4 py-3 text-center text-emerald-600 text-lg">✓</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-slate-700">Bez aplikacji dla wetera</td><td class="px-4 py-3 text-center bg-teal-50/50 text-teal-600 text-lg">✓</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-slate-700">Cross-clinic</td><td class="px-4 py-3 text-center bg-teal-50/50 text-teal-600 text-lg">✓</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td><td class="px-4 py-3 text-center text-emerald-600 text-lg">✓</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-slate-700">Emergency-first UI</td><td class="px-4 py-3 text-center bg-teal-50/50 text-teal-600 text-lg">✓</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-slate-700">Lost mode</td><td class="px-4 py-3 text-center bg-teal-50/50 text-teal-600 text-lg">✓</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td><td class="px-4 py-3 text-center text-amber-500 text-xs font-bold">częściowo</td><td class="px-4 py-3 text-center text-rose-400 text-lg">✗</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-slate-700">Cena dla konsumenta</td><td class="px-4 py-3 text-center bg-teal-50/50 font-bold text-slate-900">€44 + €3,99/mc</td><td class="px-4 py-3 text-center text-slate-500">€30 (klinika)</td><td class="px-4 py-3 text-center text-slate-500">gratis (ad-driven)</td><td class="px-4 py-3 text-center text-slate-500">€99/mc B2B</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-slate-500 mt-6 text-sm"><strong class="text-slate-800">Pozycjonowanie:</strong> jedyny produkt łączący NFC emergency-scan + cloud + cross-clinic + lost mode w cenie konsumenckiej.</p>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 10 — TRACTION + ROADMAP                                   -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Plan i prognoza</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">Od 1 mln € do 24 mln € w 5 lat.</h2>
+    <p class="text-xl text-slate-600 mb-10">Trójkanałowa dystrybucja od dnia 1: D2C + lecznice + schroniska.</p>
+
+    <!-- Revenue chart -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 mb-6 shadow-sm">
+      <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Prognoza przychodów (mln EUR)</p>
+      <div class="flex items-end gap-3 h-48">
+        <div class="flex-1 flex flex-col items-center gap-2">
+          <div class="w-full bg-gradient-to-t from-teal-200 to-teal-100 rounded-t-lg flex items-start justify-center pt-2 font-bold text-teal-800" style="height: 5%">1,2</div>
+          <span class="text-xs text-slate-500 font-semibold">2024</span>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-2">
+          <div class="w-full bg-gradient-to-t from-teal-300 to-teal-100 rounded-t-lg flex items-start justify-center pt-2 font-bold text-teal-800" style="height: 17%">4,1</div>
+          <span class="text-xs text-slate-500 font-semibold">2025</span>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-2">
+          <div class="w-full bg-gradient-to-t from-teal-400 to-teal-200 rounded-t-lg flex items-start justify-center pt-2 font-bold text-teal-900" style="height: 35%">8,6</div>
+          <span class="text-xs text-slate-500 font-semibold">2026</span>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-2">
+          <div class="w-full bg-gradient-to-t from-teal-500 to-teal-300 rounded-t-lg flex items-start justify-center pt-2 font-bold text-white" style="height: 64%">15,6</div>
+          <span class="text-xs text-slate-500 font-semibold">2027</span>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-2">
+          <div class="w-full bg-gradient-to-t from-teal-600 to-teal-400 rounded-t-lg flex items-start justify-center pt-2 font-bold text-white" style="height: 100%">24,3</div>
+          <span class="text-xs text-slate-500 font-semibold">2028</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roadmap timeline -->
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-700">6 miesięcy</p>
+        <p class="font-display font-bold text-slate-900 text-lg mt-1 mb-2">MVP + 1k userów</p>
+        <p class="text-xs text-slate-500">PL, 20 wetów partnerskich, web app</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-700">12 miesięcy</p>
+        <p class="font-display font-bold text-slate-900 text-lg mt-1 mb-2">10k userów, €100k MRR</p>
+        <p class="text-xs text-slate-500">PL+DE+CZ, 50 wetów, podstawowe API</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-700">18 miesięcy</p>
+        <p class="font-display font-bold text-slate-900 text-lg mt-1 mb-2">50k userów, €1M ARR</p>
+        <p class="text-xs text-slate-500">5 krajów, integracja Animana PIMS</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-700">36 miesięcy</p>
+        <p class="font-display font-bold text-slate-900 text-lg mt-1 mb-2">500k, €10M ARR, Series A</p>
+        <p class="text-xs text-slate-500">EU pełna ekspansja, koty, mobile native</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 11 — DEFENSIBILITY                                        -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Defensibility</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">Co nas chroni.</h2>
+    <p class="text-xl text-slate-600 mb-10">Kod skopiujesz w 6 miesięcy. Marki, dystrybucji i danych — nie.</p>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-teal-700"><circle cx="9" cy="7" r="4"/><path d="M16 11h6m-3-3v6"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-slate-900 mb-1 font-display text-lg">Network effect</p>
+            <p class="text-slate-600 text-sm">Globalny lost-pet alert system. Każdy pies w bazie zwiększa wartość systemu jak Tile/AirTag.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-teal-700"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-slate-900 mb-1 font-display text-lg">Data lock-in</p>
+            <p class="text-slate-600 text-sm">Historia 1–5 lat to switching cost. Nikt nie chce migrować ręcznie 50 dokumentów.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-teal-700"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-slate-900 mb-1 font-display text-lg">Brand + first mover</p>
+            <p class="text-slate-600 text-sm">Pierwszy w EU jako „Vetlink dla psów" daje rok przewagi w SEO i przyzwyczajeniach userów.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-teal-700"><path d="M9 12l2 2 4-4"/><path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/><path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/><path d="M12 21c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-slate-900 mb-1 font-display text-lg">Ekskluzywne partnerstwa</p>
+            <p class="text-slate-600 text-sm">Kontrakty z PIMS (Animana, Provet) i ubezpieczycielami — 12-mc moat na każdym integracyjnym kanale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-slate-900 text-white rounded-2xl p-6">
+      <p class="text-sm text-slate-400 mb-2 font-semibold uppercase tracking-wider">Time to copy</p>
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <div><span class="text-2xl font-bold font-display block">6 mc</span><span class="text-slate-300">aplikacja (4 osoby)</span></div>
+        <div><span class="text-2xl font-bold font-display block">2–3 lata</span><span class="text-slate-300">dystrybucja klinik i schronisk</span></div>
+        <div><span class="text-2xl font-bold font-display block">5 lat</span><span class="text-slate-300">network effect i baza danych</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- SLIDE 12 — TEAM + ASK                                           -->
+<!-- ============================================================== -->
+<section data-slide class="hidden">
+  <div class="slide-inner">
+    <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Zespół + runda</p>
+    <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-10">€600k pre-seed na 12 miesięcy do €100k MRR.</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Team -->
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Zespół</p>
+        <div class="space-y-3">
+          <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500 text-white font-bold flex items-center justify-center">F</div>
+            <div><p class="font-bold text-slate-800">Founder / CEO</p><p class="text-xs text-slate-500">Wizja, sprzedaż, fundraising</p></div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 font-bold flex items-center justify-center">?</div>
+            <div><p class="font-bold text-slate-800">CTO</p><p class="text-xs text-slate-500">Stack, security, API</p></div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 font-bold flex items-center justify-center">?</div>
+            <div><p class="font-bold text-slate-800">Head of Sales</p><p class="text-xs text-slate-500">Lecznice, schroniska, retail</p></div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 font-bold flex items-center justify-center">?</div>
+            <div><p class="font-bold text-slate-800">Vet Advisor</p><p class="text-xs text-slate-500">Kredibilność, brand</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ask -->
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Use of funds</p>
+        <div class="bg-gradient-to-br from-teal-500 to-cyan-600 text-white rounded-3xl p-6 shadow-2xl shadow-teal-300/60">
+          <p class="font-display text-5xl font-bold mb-1">€600k</p>
+          <p class="text-teal-100 text-sm mb-6">Pre-seed round, 12-miesięczny runway</p>
+
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Produkt (zespół tech, MVP, V1)</span><span class="font-bold">40%</span></div>
+              <div class="h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full bg-white rounded-full" style="width: 40%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Marketing / GTM</span><span class="font-bold">30%</span></div>
+              <div class="h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full bg-white rounded-full" style="width: 30%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Zespół (sales, vet, design)</span><span class="font-bold">20%</span></div>
+              <div class="h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full bg-white rounded-full" style="width: 20%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Legal / compliance</span><span class="font-bold">10%</span></div>
+              <div class="h-2 bg-white/20 rounded-full overflow-hidden"><div class="h-full bg-white rounded-full" style="width: 10%"></div></div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-white/20">
+            <p class="text-xs uppercase tracking-wider text-teal-100 mb-2 font-semibold">Milestone do Series A</p>
+            <ul class="text-sm space-y-1.5">
+              <li>✓ 10 000 aktywnych userów</li>
+              <li>✓ €100 000 MRR</li>
+              <li>✓ 50 wetów partnerskich</li>
+              <li>✓ Pierwsza integracja PIMS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <p class="font-display text-2xl font-bold text-slate-900 mb-2">Stripe dla danych medycznych zwierząt.</p>
+      <p class="text-slate-500">Dziękujemy. Pytania? <span class="text-teal-700 font-semibold">hello@vetlink.eu</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- NAVIGATION (slide counter + arrows)                             -->
+<!-- ============================================================== -->
+<div class="fixed bottom-4 right-4 flex items-center gap-2 z-40">
+  <button onclick="prev()" class="w-10 h-10 rounded-full bg-white/95 backdrop-blur shadow-lg ring-1 ring-slate-200 hover:bg-slate-50 flex items-center justify-center text-slate-600 transition" aria-label="Poprzedni">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <div id="counter" class="bg-white/95 backdrop-blur shadow-lg ring-1 ring-slate-200 rounded-full px-4 py-2 text-sm font-bold text-slate-700 font-mono">1 / 12</div>
+  <button onclick="next()" class="w-10 h-10 rounded-full brand-grad shadow-lg hover:shadow-xl flex items-center justify-center text-white transition" aria-label="Następny">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+</div>
+
+<!-- Tip on first load -->
+<div id="tip" class="fixed top-4 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur text-white text-xs font-medium px-4 py-2 rounded-full shadow-lg z-40 transition-opacity">
+  Użyj klawiszy ← → albo spacji do nawigacji
+</div>
+
+<!-- Copyright footer (zawsze widoczny) -->
+<div class="fixed bottom-4 left-4 z-40 text-xs font-medium text-slate-500 bg-white/80 backdrop-blur rounded-full px-3 py-1.5 ring-1 ring-slate-200 shadow-sm">
+  Copyright © Cognify 2026
+</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('[data-slide]');
+  const counter = document.getElementById('counter');
+
+  function show(n) {
+    current = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, i) => s.classList.toggle('hidden', i !== current));
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    history.replaceState(null, '', '#' + (current + 1));
+  }
+  function next() { show(current + 1); }
+  function prev() { show(current - 1); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(slides.length - 1);
+  });
+
+  // Click slide → next (but not on links/buttons/iframes)
+  document.querySelectorAll('[data-slide]').forEach(s => {
+    s.addEventListener('click', e => {
+      if (e.target.closest('a, button, iframe, input')) return;
+      next();
+    });
+  });
+
+  // Hash routing
+  const hash = parseInt(location.hash.slice(1), 10);
+  if (!isNaN(hash) && hash >= 1 && hash <= slides.length) show(hash - 1);
+
+  // Hide tip after 4s
+  setTimeout(() => document.getElementById('tip').style.opacity = '0', 4000);
+</script>
+
+</body>
+</html>
