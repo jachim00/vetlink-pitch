@@ -41,15 +41,31 @@
 
   /* Mock phone for demo slide */
   .phone {
-    width: 280px;
-    height: 580px;
-    border: 12px solid #1e293b;
-    border-radius: 38px;
+    width: 260px;
+    height: 540px;
+    border: 10px solid #1e293b;
+    border-radius: 36px;
     background: white;
     overflow: hidden;
     box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.4);
+    position: relative;
   }
-  .phone iframe { width: 100%; height: 100%; border: 0; transform-origin: top left; }
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 100px; height: 22px;
+    background: #1e293b;
+    border-radius: 0 0 12px 12px;
+    z-index: 2;
+  }
+  .phone iframe {
+    width: 167%;
+    height: 167%;
+    border: 0;
+    transform: scale(0.6);
+    transform-origin: top left;
+  }
 </style>
 </head>
 <body>
@@ -87,12 +103,12 @@
   <div class="slide-inner">
     <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-6">Wyobraź sobie</p>
     <blockquote class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-10">
-      „Burek o 23:00 wymiotuje.<br>
-      Dyżurny weterynarz nie zna<br>
-      <span class="brand-text">alergii na penicylinę.</span>"
+      Burek o 23:00 trafia do dyżurnego weterynarza.<br>
+      Lekarz widzi go pierwszy raz —<br>
+      <span class="brand-text">nie ma jego historii.</span>
     </blockquote>
     <p class="text-xl sm:text-2xl text-slate-600 mb-12 max-w-3xl leading-relaxed">
-      Tysiące psów rocznie cierpi przez błędy medyczne wynikające z braku dostępu do danych.
+      Nie wie, że Burek jest uczulony na penicylinę. Tysiące zwierząt rocznie ginie lub cierpi przez decyzje podjęte bez dostępu do danych medycznych.
     </p>
     <div class="bg-white border-l-4 border-teal-500 rounded-r-2xl p-6 max-w-2xl shadow-lg">
       <p class="text-2xl sm:text-3xl font-bold text-slate-800 font-display">Vetlink rozwiązuje to w 2 sekundy.</p>
@@ -109,33 +125,42 @@
     <p class="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3">Problem</p>
     <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-12">Dane medyczne psów są rozbite.</h2>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm">
-        <div class="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-700"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    <div class="grid md:grid-cols-3 gap-5 relative">
+      <!-- step 1 -->
+      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm relative">
+        <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-slate-900 text-white font-display font-bold text-sm flex items-center justify-center shadow">1</div>
+        <div class="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-700"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-        <p class="font-bold text-slate-800 text-lg mb-2">Rozproszone</p>
+        <p class="font-bold text-slate-800 text-xl mb-2 font-display">Rozproszone</p>
         <p class="text-slate-600 leading-relaxed">Kliniki, paszporty papierowe, aplikacje pojedynczych lecznic, pamięć właściciela.</p>
       </div>
-      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm">
-        <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <!-- step 2 -->
+      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm relative">
+        <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-amber-500 text-white font-display font-bold text-sm flex items-center justify-center shadow">2</div>
+        <div class="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-700"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
         </div>
-        <p class="font-bold text-slate-800 text-lg mb-2">Niedostępne</p>
+        <p class="font-bold text-slate-800 text-xl mb-2 font-display">Niedostępne</p>
         <p class="text-slate-600 leading-relaxed">Poza godzinami „swojego" wetera, na urlopie, po wypadku — danych po prostu nie ma.</p>
       </div>
-      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm">
-        <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-700"><path d="M12 8v4"/><path d="M12 16h.01"/><circle cx="12" cy="12" r="10"/></svg>
+      <!-- step 3 -->
+      <div class="bg-rose-50 rounded-3xl p-7 border-2 border-rose-300 shadow-lg shadow-rose-100/60 relative">
+        <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-rose-600 text-white font-display font-bold text-sm flex items-center justify-center shadow">3</div>
+        <div class="w-14 h-14 rounded-2xl bg-rose-200/60 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rose-700"><path d="M12 8v4"/><path d="M12 16h.01"/><circle cx="12" cy="12" r="10"/></svg>
         </div>
-        <p class="font-bold text-slate-800 text-lg mb-2">Błędy medyczne</p>
-        <p class="text-slate-600 leading-relaxed">Lek na który zwierzę jest uczulone, opóźniona diagnoza, koszty właściciela i klinik.</p>
+        <p class="font-bold text-slate-900 text-xl mb-2 font-display">Błędy medyczne</p>
+        <p class="text-slate-700 leading-relaxed">Lek, na który zwierzę jest uczulone. Opóźniona diagnoza. Wysokie koszty — i czasem stracone życie.</p>
       </div>
     </div>
 
-    <div class="mt-12 inline-flex items-baseline gap-3 bg-slate-900 text-white px-6 py-4 rounded-2xl">
-      <span class="font-display text-4xl font-bold">~108M</span>
-      <span class="text-slate-300">incydentów ratunkowych rocznie w UE, w których dostęp do danych zmienia decyzję</span>
+    <div class="mt-10 bg-gradient-to-br from-slate-900 to-slate-800 text-white px-7 py-5 rounded-2xl flex flex-col sm:flex-row items-center gap-4">
+      <div class="font-display text-5xl font-bold brand-text shrink-0">~108M</div>
+      <div class="border-l border-slate-700 pl-4">
+        <p class="font-semibold mb-0.5">incydentów ratunkowych rocznie w UE</p>
+        <p class="text-sm text-slate-400">…w których dostęp do danych zmienia decyzję medyczną</p>
+      </div>
     </div>
   </div>
 </section>
@@ -196,7 +221,7 @@
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="flex justify-center">
         <div class="phone">
-          <iframe src="https://jachim00.github.io/vetlink/" loading="lazy" style="width: 280px; height: 580px;"></iframe>
+          <iframe src="https://jachim00.github.io/vetlink/" loading="lazy"></iframe>
         </div>
       </div>
       <div>
@@ -236,21 +261,33 @@
     <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-2">90 mln psów. €5,4 mld rynku.</h2>
     <p class="text-xl text-slate-600 mb-12">CAGR 8–15%. Pozytywny vector demograficzny.</p>
 
-    <div class="grid md:grid-cols-3 gap-6 mb-10">
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
       <div class="bg-white rounded-3xl p-8 border-2 border-slate-200">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">TAM</p>
-        <p class="font-display text-5xl font-bold text-slate-900 mb-1">€12 mld</p>
-        <p class="text-sm text-slate-500">200 mln zwierząt domowych UE × €60 LTV</p>
+        <div class="flex items-baseline gap-2 mb-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">TAM</p>
+          <p class="text-[10px] text-slate-400 italic">Cały rynek</p>
+        </div>
+        <p class="font-display text-5xl font-bold text-slate-900 mb-2">€12 mld</p>
+        <p class="text-sm text-slate-600 leading-relaxed mb-2">200 mln zwierząt domowych w UE × €60 LTV</p>
+        <p class="text-xs text-slate-500 leading-snug border-t border-slate-100 pt-2"><strong class="text-slate-700">Total Addressable Market</strong> — wszystkie zwierzęta UE, do których teoretycznie można dotrzeć.</p>
       </div>
       <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-8 border-2 border-teal-300 shadow-lg shadow-teal-100/60">
-        <p class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-2">SAM</p>
-        <p class="font-display text-5xl font-bold text-slate-900 mb-1">€5,4 mld</p>
-        <p class="text-sm text-slate-600">90 mln psów EU (start: PL+DACH)</p>
+        <div class="flex items-baseline gap-2 mb-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-teal-700">SAM</p>
+          <p class="text-[10px] text-teal-700/70 italic">Nasz segment</p>
+        </div>
+        <p class="font-display text-5xl font-bold text-slate-900 mb-2">€5,4 mld</p>
+        <p class="text-sm text-slate-700 leading-relaxed mb-2">90 mln psów UE (start: PL + DACH)</p>
+        <p class="text-xs text-slate-600 leading-snug border-t border-teal-200 pt-2"><strong class="text-teal-800">Serviceable Available Market</strong> — segment, który możemy obsłużyć już teraz: właściciele psów w UE.</p>
       </div>
       <div class="bg-white rounded-3xl p-8 border-2 border-slate-200">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">SOM 5Y</p>
-        <p class="font-display text-5xl font-bold text-slate-900 mb-1">€54 mln</p>
-        <p class="text-sm text-slate-500">1% SAM = 900 tys. aktywnych pet-tagów</p>
+        <div class="flex items-baseline gap-2 mb-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">SOM</p>
+          <p class="text-[10px] text-slate-400 italic">Realny cel 5 lat</p>
+        </div>
+        <p class="font-display text-5xl font-bold text-slate-900 mb-2">€54 mln</p>
+        <p class="text-sm text-slate-600 leading-relaxed mb-2">1% SAM = 900 tys. aktywnych tagów</p>
+        <p class="text-xs text-slate-500 leading-snug border-t border-slate-100 pt-2"><strong class="text-slate-700">Serviceable Obtainable Market</strong> — to, co realnie możemy zdobyć w 5 lat (zgodne z prognozą €24 mln w 2028).</p>
       </div>
     </div>
 
@@ -337,26 +374,30 @@
     <h2 class="font-display text-4xl sm:text-6xl font-bold text-slate-900 mb-3">Liczby działają.</h2>
     <p class="text-xl text-slate-600 mb-10">Hardware z 86% marżą + sub z 80% gross margin = zdrowy biznes.</p>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-      <div class="bg-white rounded-3xl p-6 border border-slate-200 text-center">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">LTV</p>
-        <p class="font-display text-4xl sm:text-5xl font-bold brand-text">€150</p>
-        <p class="text-xs text-slate-500 mt-2">€38 hardware + 28mc × €3,99</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white rounded-3xl p-5 border border-slate-200 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">LTV</p>
+        <p class="font-display text-3xl sm:text-4xl font-bold brand-text">€150</p>
+        <p class="text-[11px] text-slate-500 mt-2 leading-snug">Wartość klienta przez cały czas relacji</p>
+        <p class="text-[10px] text-slate-400 mt-1 italic">€38 hardware + 28 mc × €3,99 sub</p>
       </div>
-      <div class="bg-white rounded-3xl p-6 border border-slate-200 text-center">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">CAC</p>
-        <p class="font-display text-4xl sm:text-5xl font-bold text-slate-900">€15</p>
-        <p class="text-xs text-slate-500 mt-2">Mix D2C / vet / schronisko</p>
+      <div class="bg-white rounded-3xl p-5 border border-slate-200 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">CAC</p>
+        <p class="font-display text-3xl sm:text-4xl font-bold text-slate-900">€15</p>
+        <p class="text-[11px] text-slate-500 mt-2 leading-snug">Koszt pozyskania jednego klienta</p>
+        <p class="text-[10px] text-slate-400 mt-1 italic">Mix D2C / vet / schronisko</p>
       </div>
-      <div class="bg-white rounded-3xl p-6 border-2 border-teal-300 text-center">
-        <p class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">LTV/CAC</p>
-        <p class="font-display text-4xl sm:text-5xl font-bold brand-text">9,9×</p>
-        <p class="text-xs text-slate-500 mt-2">Zdrowy benchmark &gt; 3×</p>
+      <div class="bg-white rounded-3xl p-5 border-2 border-teal-300 text-center shadow-lg shadow-teal-100/60">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-700 mb-2">LTV/CAC</p>
+        <p class="font-display text-3xl sm:text-4xl font-bold brand-text">9,9×</p>
+        <p class="text-[11px] text-slate-600 mt-2 leading-snug">Ile razy LTV pokrywa CAC</p>
+        <p class="text-[10px] text-emerald-700 mt-1 italic font-semibold">Benchmark zdrowy &gt; 3×</p>
       </div>
-      <div class="bg-white rounded-3xl p-6 border border-slate-200 text-center">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Payback</p>
-        <p class="font-display text-4xl sm:text-5xl font-bold text-slate-900">4,5<span class="text-2xl">mc</span></p>
-        <p class="text-xs text-slate-500 mt-2">CAC odbity w pół roku</p>
+      <div class="bg-white rounded-3xl p-5 border border-slate-200 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Payback</p>
+        <p class="font-display text-3xl sm:text-4xl font-bold text-slate-900">4,5<span class="text-xl">mc</span></p>
+        <p class="text-[11px] text-slate-500 mt-2 leading-snug">Czas potrzebny na odbicie CAC</p>
+        <p class="text-[10px] text-slate-400 mt-1 italic">Pierwsze 5 mc = breakeven</p>
       </div>
     </div>
 
@@ -427,26 +468,50 @@
 
     <!-- Revenue chart -->
     <div class="bg-white rounded-3xl border border-slate-200 p-6 mb-6 shadow-sm">
-      <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Prognoza przychodów (mln EUR)</p>
-      <div class="flex items-end gap-3 h-48">
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <div class="w-full bg-gradient-to-t from-teal-200 to-teal-100 rounded-t-lg flex items-start justify-center pt-2 font-bold text-teal-800" style="height: 5%">1,2</div>
+      <div class="flex items-baseline justify-between mb-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Prognoza przychodów (mln EUR)</p>
+        <p class="text-xs text-emerald-600 font-bold">CAGR ~110%</p>
+      </div>
+      <div class="flex items-end gap-3 h-56 relative">
+        <!-- Trend arrow -->
+        <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 500 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="trendGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#0891b2" stop-opacity="1"/>
+            </linearGradient>
+          </defs>
+          <path d="M 50 209 L 150 184 L 250 143 L 350 75 L 450 11" stroke="url(#trendGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="209" r="4" fill="#14b8a6"/>
+          <circle cx="150" cy="184" r="4" fill="#14b8a6"/>
+          <circle cx="250" cy="143" r="4" fill="#14b8a6"/>
+          <circle cx="350" cy="75" r="4" fill="#0891b2"/>
+          <circle cx="450" cy="11" r="5" fill="#0e7490"/>
+        </svg>
+
+        <div class="flex-1 flex flex-col items-center justify-end gap-2 relative">
+          <span class="font-display font-bold text-teal-700 text-lg">1,2</span>
+          <div class="w-full bg-gradient-to-t from-teal-200 to-teal-100 rounded-t-lg" style="height: 5%"></div>
           <span class="text-xs text-slate-500 font-semibold">2024</span>
         </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <div class="w-full bg-gradient-to-t from-teal-300 to-teal-100 rounded-t-lg flex items-start justify-center pt-2 font-bold text-teal-800" style="height: 17%">4,1</div>
+        <div class="flex-1 flex flex-col items-center justify-end gap-2">
+          <span class="font-display font-bold text-teal-700 text-lg">4,1</span>
+          <div class="w-full bg-gradient-to-t from-teal-300 to-teal-100 rounded-t-lg" style="height: 17%"></div>
           <span class="text-xs text-slate-500 font-semibold">2025</span>
         </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <div class="w-full bg-gradient-to-t from-teal-400 to-teal-200 rounded-t-lg flex items-start justify-center pt-2 font-bold text-teal-900" style="height: 35%">8,6</div>
+        <div class="flex-1 flex flex-col items-center justify-end gap-2">
+          <span class="font-display font-bold text-teal-700 text-lg">8,6</span>
+          <div class="w-full bg-gradient-to-t from-teal-400 to-teal-200 rounded-t-lg" style="height: 35%"></div>
           <span class="text-xs text-slate-500 font-semibold">2026</span>
         </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <div class="w-full bg-gradient-to-t from-teal-500 to-teal-300 rounded-t-lg flex items-start justify-center pt-2 font-bold text-white" style="height: 64%">15,6</div>
+        <div class="flex-1 flex flex-col items-center justify-end gap-2">
+          <span class="font-display font-bold text-teal-800 text-lg">15,6</span>
+          <div class="w-full bg-gradient-to-t from-teal-500 to-teal-300 rounded-t-lg" style="height: 64%"></div>
           <span class="text-xs text-slate-500 font-semibold">2027</span>
         </div>
-        <div class="flex-1 flex flex-col items-center gap-2">
-          <div class="w-full bg-gradient-to-t from-teal-600 to-teal-400 rounded-t-lg flex items-start justify-center pt-2 font-bold text-white" style="height: 100%">24,3</div>
+        <div class="flex-1 flex flex-col items-center justify-end gap-2">
+          <span class="font-display font-bold text-teal-900 text-xl">24,3</span>
+          <div class="w-full bg-gradient-to-t from-teal-600 to-teal-400 rounded-t-lg" style="height: 100%"></div>
           <span class="text-xs text-slate-500 font-semibold">2028</span>
         </div>
       </div>
@@ -638,7 +703,13 @@
 
 <!-- Tip on first load -->
 <div id="tip" class="fixed top-4 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur text-white text-xs font-medium px-4 py-2 rounded-full shadow-lg z-40 transition-opacity">
-  Użyj klawiszy ← → albo spacji do nawigacji
+  <span data-i18n="tip">Użyj klawiszy ← → albo spacji do nawigacji</span>
+</div>
+
+<!-- Language toggle -->
+<div class="fixed top-4 right-4 z-40 flex items-center gap-1 bg-white/95 backdrop-blur shadow-lg ring-1 ring-slate-200 rounded-full p-1">
+  <button onclick="setLang('pl')" data-lang-btn="pl" class="lang-btn px-3 py-1.5 rounded-full text-xs font-bold transition">🇵🇱 PL</button>
+  <button onclick="setLang('en')" data-lang-btn="en" class="lang-btn px-3 py-1.5 rounded-full text-xs font-bold transition">🇬🇧 EN</button>
 </div>
 
 <!-- Copyright footer (zawsze widoczny) -->
@@ -655,7 +726,7 @@
     current = Math.max(0, Math.min(slides.length - 1, n));
     slides.forEach((s, i) => s.classList.toggle('hidden', i !== current));
     counter.textContent = `${current + 1} / ${slides.length}`;
-    history.replaceState(null, '', '#' + (current + 1));
+    history.replaceState(null, '', '#' + (current + 1) + (CURRENT_LANG === 'en' ? '?lang=en' : ''));
   }
   function next() { show(current + 1); }
   function prev() { show(current - 1); }
@@ -667,7 +738,6 @@
     else if (e.key === 'End') show(slides.length - 1);
   });
 
-  // Click slide → next (but not on links/buttons/iframes)
   document.querySelectorAll('[data-slide]').forEach(s => {
     s.addEventListener('click', e => {
       if (e.target.closest('a, button, iframe, input')) return;
@@ -675,13 +745,275 @@
     });
   });
 
-  // Hash routing
   const hash = parseInt(location.hash.slice(1), 10);
   if (!isNaN(hash) && hash >= 1 && hash <= slides.length) show(hash - 1);
 
-  // Hide tip after 4s
   setTimeout(() => document.getElementById('tip').style.opacity = '0', 4000);
+
+  // === I18N ===
+  const I18N_EN = {
+    // Cover
+    "Karta zdrowia psa": "Pet health card",
+    "w 2 sekundy.": "in 2 seconds.",
+    "Bezpieczeństwo. Dostęp. Spokój.": "Safety. Access. Peace of mind.",
+    "Zawsze połączony ze zdrowiem Twojego psa.": "Always connected to your pet's health.",
+    "Pitch Deck": "Pitch Deck",
+    // Hook
+    "Wyobraź sobie": "Imagine this",
+    "Burek o 23:00 trafia do dyżurnego weterynarza.": "It's 11 PM. Burek arrives at the on-call vet.",
+    "Lekarz widzi go pierwszy raz —": "The doctor sees him for the first time —",
+    "nie ma jego historii.": "with no medical history.",
+    "Nie wie, że Burek jest uczulony na penicylinę. Tysiące zwierząt rocznie ginie lub cierpi przez decyzje podjęte bez dostępu do danych medycznych.": "He has no idea Burek is allergic to penicillin. Thousands of pets die or suffer each year because of decisions made without access to medical data.",
+    "Vetlink rozwiązuje to w 2 sekundy.": "Vetlink solves this in 2 seconds.",
+    "Skan tagu → dane → decyzja medyczna.": "Scan tag → data → medical decision.",
+    // Slide 6 — TAM/SAM/SOM definitions
+    "Cały rynek": "Total market",
+    "Nasz segment": "Our segment",
+    "Realny cel 5 lat": "Realistic 5-year goal",
+    "200 mln zwierząt domowych w UE × €60 LTV": "200M EU pets × €60 LTV",
+    "90 mln psów UE (start: PL + DACH)": "90M EU dogs (start: PL + DACH)",
+    "1% SAM = 900 tys. aktywnych tagów": "1% SAM = 900k active tags",
+    "Total Addressable Market": "Total Addressable Market",
+    "— wszystkie zwierzęta UE, do których teoretycznie można dotrzeć.": "— all EU pets we could theoretically reach.",
+    "Serviceable Available Market": "Serviceable Available Market",
+    "— segment, który możemy obsłużyć już teraz: właściciele psów w UE.": "— the segment we can serve today: dog owners in the EU.",
+    "Serviceable Obtainable Market": "Serviceable Obtainable Market",
+    "— to, co realnie możemy zdobyć w 5 lat (zgodne z prognozą €24 mln w 2028).": "— what we can realistically capture in 5 years (in line with the €24M forecast for 2028).",
+    // Slide 8 — Unit econ definitions
+    "Wartość klienta przez cały czas relacji": "Customer's lifetime value",
+    "€38 hardware + 28 mc × €3,99 sub": "€38 hardware + 28 mo × €3.99 sub",
+    "Koszt pozyskania jednego klienta": "Cost to acquire one customer",
+    "Ile razy LTV pokrywa CAC": "How many times LTV covers CAC",
+    "Benchmark zdrowy > 3×": "Healthy benchmark > 3×",
+    "Czas potrzebny na odbicie CAC": "Time to recover CAC",
+    "Pierwsze 5 mc = breakeven": "First 5 mo = breakeven",
+    // Slide 10
+    "CAGR ~110%": "CAGR ~110%",
+    // Problem
+    "Problem": "Problem",
+    "Dane medyczne psów są rozbite.": "Pet medical data is fragmented.",
+    "Rozproszone": "Scattered",
+    "Kliniki, paszporty papierowe, aplikacje pojedynczych lecznic, pamięć właściciela.": "Clinics, paper passports, single-vet apps, owner's memory.",
+    "Niedostępne": "Inaccessible",
+    "Poza godzinami „swojego\" wetera, na urlopie, po wypadku — danych po prostu nie ma.": "Outside your usual vet's hours, on holiday, after an accident — the data simply isn't there.",
+    "Błędy medyczne": "Medical errors",
+    "Lek na który zwierzę jest uczulone, opóźniona diagnoza, koszty właściciela i klinik.": "Drug allergies overlooked, delayed diagnosis, costs to owner and clinic.",
+    "incydentów ratunkowych rocznie w UE, w których dostęp do danych zmienia decyzję": "emergency incidents per year in the EU where data access changes the decision",
+    // Solution
+    "Rozwiązanie": "Solution",
+    "NFC tag + cloud.": "NFC tag + cloud.",
+    "Skan, dane, decyzja — bez aplikacji, bez logowania, bez tarcia.": "Scan, data, decision — no app, no login, no friction.",
+    "1. Vetlink Tag": "1. Vetlink Tag",
+    "NFC NTAG215 na obroży. Wodoodporny IP67, MTBF 10 lat, koszt produkcji €2.": "NFC NTAG215 on the collar. IP67 waterproof, MTBF 10 years, €2 production cost.",
+    "2. Skan": "2. Scan",
+    "Każdy telefon iOS 11+/Android 4.4+. Otwiera stronę web. Bez aplikacji, bez PIN-u.": "Any iOS 11+ / Android 4.4+ phone. Opens a web page. No app, no PIN required.",
+    "3. Dane w 2s": "3. Data in 2s",
+    "Imię, alergie, leki, choroby przewlekłe, kontakt awaryjny. Pełna historia za PIN-em.": "Name, allergies, meds, chronic conditions, emergency contact. Full history behind a PIN.",
+    "Lost mode": "Lost mode",
+    "Telefon + lokalizacja": "Phone + location",
+    "Kalendarz szczepień": "Vaccination calendar",
+    "Auto-przypomnienia": "Auto-reminders",
+    "OCR z dokumentu": "Document OCR",
+    "AI rozpoznaje 94%": "AI parses 94%",
+    // Demo
+    "Demo": "Demo",
+    "Działający prototyp.": "Live prototype.",
+    "Zeskanuj tag → strona otwiera się w 2s. Bez instalacji.": "Scan the tag → page opens in 2s. No install.",
+    "Karta po skanie": "Card after scan",
+    "Imię, alergie, leki, choroby — natychmiast.": "Name, allergies, meds, conditions — instantly.",
+    "PIN gate": "PIN gate",
+    "Pełna historia + dokumenty po podaniu PIN-u (demo: 1234).": "Full history + documents behind PIN (demo: 1234).",
+    "Jeden klik → publiczny widok zmienia się w czerwony alarm z numerem.": "One click → public view turns into red alert with phone number.",
+    "Onboarding 90s": "Onboarding 90s",
+    "Aktywacja nowego taga w cztery kroki.": "Activate a new tag in four steps.",
+    "Otwórz demo →": "Open demo →",
+    // Market
+    "Rynek": "Market",
+    "90 mln psów. €5,4 mld rynku.": "90M dogs. €5.4B market.",
+    "CAGR 8–15%. Pozytywny vector demograficzny.": "CAGR 8–15%. Strong demographic tailwind.",
+    "TAM": "TAM",
+    "200 mln zwierząt domowych UE × €60 LTV": "200M EU pets × €60 LTV",
+    "SAM": "SAM",
+    "90 mln psów EU (start: PL+DACH)": "90M EU dogs (start: PL+DACH)",
+    "SOM 5Y": "SOM 5Y",
+    "1% SAM = 900 tys. aktywnych pet-tagów": "1% SAM = 900k active pet-tags",
+    "Trendy zasilające popyt": "Demand drivers",
+    "Humanizacja zwierząt — pies = członek rodziny": "Pet humanization — dog = family member",
+    "Wzrost wydatków na pet-care 8%/rok": "Pet-care spending growing 8% YoY",
+    "95% adopcji smartfonów w EU": "95% smartphone adoption in EU",
+    "Źródła: FEDIAF 2023, Eurostat 2024.": "Sources: FEDIAF 2023, Eurostat 2024.",
+    // Business model
+    "Model biznesowy": "Business model",
+    "Hardware + subskrypcja.": "Hardware + subscription.",
+    "Trzy źródła przychodu, każde z własną dynamiką.": "Three revenue streams, each with its own economics.",
+    "Free": "Free",
+    "+ tag €44 jednorazowo": "+ €44 tag, one-time",
+    "1 zwierzę": "1 pet",
+    "Public scan": "Public scan",
+    "Podstawowe dane": "Basic data",
+    "Premium ⭐": "Premium ⭐",
+    "+ tag €44, sub 3mc gratis": "+ €44 tag, 3 mo free sub",
+    "Pełna historia + dokumenty": "Full history + docs",
+    "OCR (10/mc)": "OCR (10/mo)",
+    "Vet API (lekarz dopisuje)": "Vet API (clinician edit)",
+    "Family": "Family",
+    "+ tagi €44 każdy": "+ €44 per tag",
+    "Do 5 zwierząt": "Up to 5 pets",
+    "OCR unlimited": "Unlimited OCR",
+    "Współwłaściciel + dziedziczenie": "Co-owner + inheritance",
+    "Integracja z PIMS klinik": "PIMS integration",
+    "B2C": "B2C",
+    "Tag + sub. Rdzeń przychodów Y1–Y2.": "Tag + sub. Core revenue Y1–Y2.",
+    "B2B kliniki": "B2B clinics",
+    "€99/mc/lokalizacja + €0,50 import historii. V3+.": "€99/mo/location + €0.50 history import. V3+.",
+    "Partnerstwa": "Partnerships",
+    "Affiliate ubezpieczeń €15–30 / wykupiona polisa.": "€15–30 affiliate per insurance policy sold.",
+    // Unit econ
+    "Unit economics": "Unit economics",
+    "Liczby działają.": "The numbers work.",
+    "Hardware z 86% marżą + sub z 80% gross margin = zdrowy biznes.": "86% hardware margin + 80% subscription gross margin = healthy business.",
+    "LTV": "LTV",
+    "€38 hardware + 28mc × €3,99": "€38 hardware + 28 mo × €3.99",
+    "CAC": "CAC",
+    "Mix D2C / vet / schronisko": "Mix D2C / vet / shelter",
+    "LTV/CAC": "LTV/CAC",
+    "Zdrowy benchmark > 3×": "Healthy benchmark > 3×",
+    "Payback": "Payback",
+    "CAC odbity w pół roku": "CAC paid back in half a year",
+    "Marże": "Margins",
+    "Marża hardware (€38 / €44)": "Hardware margin (€38 / €44)",
+    "Gross margin subskrypcji": "Subscription gross margin",
+    "Płacących userów do break-even": "Paying users to break even",
+    // Competition
+    "Konkurencja": "Competition",
+    "Nikt nie łączy NFC + cloud + emergency-first.": "Nobody combines NFC + cloud + emergency-first.",
+    "Microchipy mają tylko ID, aplikacje wymagają logowania, PIMS są zamknięte w klinice.": "Microchips give only an ID, apps require login, PIMS is locked inside the clinic.",
+    "Cecha": "Feature",
+    "ID zwierzęcia": "Pet ID",
+    "Dane medyczne": "Medical data",
+    "Bez aplikacji dla wetera": "No app for vet",
+    "Cross-clinic": "Cross-clinic",
+    "Emergency-first UI": "Emergency-first UI",
+    "Cena dla konsumenta": "Consumer price",
+    "€30 (klinika)": "€30 (clinic)",
+    "gratis (ad-driven)": "free (ad-driven)",
+    "częściowo": "partial",
+    "Pozycjonowanie:": "Positioning:",
+    "jedyny produkt łączący NFC emergency-scan + cloud + cross-clinic + lost mode w cenie konsumenckiej.": "the only product combining NFC emergency-scan + cloud + cross-clinic + lost mode at a consumer price.",
+    // Traction
+    "Plan i prognoza": "Plan & forecast",
+    "Od 1 mln € do 24 mln € w 5 lat.": "From €1M to €24M in 5 years.",
+    "Trójkanałowa dystrybucja od dnia 1: D2C + lecznice + schroniska.": "Three-channel distribution from day 1: D2C + clinics + shelters.",
+    "Prognoza przychodów (mln EUR)": "Revenue forecast (€M)",
+    "6 miesięcy": "6 months",
+    "MVP + 1k userów": "MVP + 1k users",
+    "PL, 20 wetów partnerskich, web app": "PL, 20 partner vets, web app",
+    "12 miesięcy": "12 months",
+    "10k userów, €100k MRR": "10k users, €100k MRR",
+    "PL+DE+CZ, 50 wetów, podstawowe API": "PL+DE+CZ, 50 vets, basic API",
+    "18 miesięcy": "18 months",
+    "50k userów, €1M ARR": "50k users, €1M ARR",
+    "5 krajów, integracja Animana PIMS": "5 countries, Animana PIMS integration",
+    "36 miesięcy": "36 months",
+    "500k, €10M ARR, Series A": "500k users, €10M ARR, Series A",
+    "EU pełna ekspansja, koty, mobile native": "Full EU expansion, cats, native mobile",
+    // Defensibility
+    "Defensibility": "Defensibility",
+    "Co nas chroni.": "Our moats.",
+    "Kod skopiujesz w 6 miesięcy. Marki, dystrybucji i danych — nie.": "Code is copyable in 6 months. Brand, distribution and data — not.",
+    "Network effect": "Network effect",
+    "Globalny lost-pet alert system. Każdy pies w bazie zwiększa wartość systemu jak Tile/AirTag.": "Global lost-pet alert system. Each pet in the database increases system value à la Tile/AirTag.",
+    "Data lock-in": "Data lock-in",
+    "Historia 1–5 lat to switching cost. Nikt nie chce migrować ręcznie 50 dokumentów.": "1–5 years of history is switching cost. Nobody wants to manually migrate 50 documents.",
+    "Brand + first mover": "Brand + first mover",
+    "Pierwszy w EU jako „Vetlink dla psów\" daje rok przewagi w SEO i przyzwyczajeniach userów.": "Being first in EU as “Vetlink for dogs” gives a year's lead on SEO and user habits.",
+    "Ekskluzywne partnerstwa": "Exclusive partnerships",
+    "Kontrakty z PIMS (Animana, Provet) i ubezpieczycielami — 12-mc moat na każdym integracyjnym kanale.": "Contracts with PIMS (Animana, Provet) and insurers — 12-month moat on every integration channel.",
+    "Time to copy": "Time to copy",
+    "aplikacja (4 osoby)": "the app (4 people)",
+    "dystrybucja klinik i schronisk": "clinic and shelter distribution",
+    "network effect i baza danych": "network effect and database",
+    // Team + Ask
+    "Zespół + runda": "Team + Round",
+    "€600k pre-seed na 12 miesięcy do €100k MRR.": "€600k pre-seed for 12 months to €100k MRR.",
+    "Zespół": "Team",
+    "Founder / CEO": "Founder / CEO",
+    "Wizja, sprzedaż, fundraising": "Vision, sales, fundraising",
+    "CTO": "CTO",
+    "Stack, security, API": "Stack, security, API",
+    "Head of Sales": "Head of Sales",
+    "Lecznice, schroniska, retail": "Clinics, shelters, retail",
+    "Vet Advisor": "Vet Advisor",
+    "Kredibilność, brand": "Credibility, brand",
+    "Use of funds": "Use of funds",
+    "Pre-seed round, 12-miesięczny runway": "Pre-seed round, 12-month runway",
+    "Produkt (zespół tech, MVP, V1)": "Product (tech team, MVP, V1)",
+    "Marketing / GTM": "Marketing / GTM",
+    "Zespół (sales, vet, design)": "Team (sales, vet, design)",
+    "Legal / compliance": "Legal / compliance",
+    "Milestone do Series A": "Milestones to Series A",
+    "10 000 aktywnych userów": "10,000 active users",
+    "€100 000 MRR": "€100,000 MRR",
+    "50 wetów partnerskich": "50 partner vets",
+    "Pierwsza integracja PIMS": "First PIMS integration",
+    "Stripe dla danych medycznych zwierząt.": "Stripe for pet medical data.",
+    "Dziękujemy. Pytania?": "Thank you. Questions?",
+    // Tip
+    "Użyj klawiszy ← → albo spacji do nawigacji": "Use ← → or space to navigate",
+    // Footer
+    "Copyright © Cognify 2026": "Copyright © Cognify 2026",
+  };
+
+  // Reverse map for switching back
+  const I18N_PL = {};
+  Object.keys(I18N_EN).forEach(k => { I18N_PL[I18N_EN[k]] = k; });
+
+  let CURRENT_LANG = 'pl';
+
+  function setLang(lang) {
+    if (lang === CURRENT_LANG) return;
+    const dict = lang === 'en' ? I18N_EN : I18N_PL;
+
+    // Walk all text nodes in slides
+    document.querySelectorAll('[data-slide]').forEach(slide => {
+      const walker = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT, null);
+      const nodes = [];
+      let n;
+      while ((n = walker.nextNode())) nodes.push(n);
+      nodes.forEach(node => {
+        const orig = node.nodeValue;
+        const trimmed = orig.trim();
+        if (!trimmed) return;
+        if (dict[trimmed]) {
+          node.nodeValue = orig.replace(trimmed, dict[trimmed]);
+        }
+      });
+    });
+
+    // Tip + footer (outside slides)
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (dict[el.textContent.trim()]) el.textContent = dict[el.textContent.trim()];
+    });
+    const footerEl = document.querySelector('.fixed.bottom-4.left-4');
+    if (footerEl && dict[footerEl.textContent.trim()]) footerEl.textContent = dict[footerEl.textContent.trim()];
+
+    CURRENT_LANG = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang-btn]').forEach(b => {
+      b.classList.toggle('lang-active', b.dataset.langBtn === lang);
+    });
+  }
+
+  // Init lang from URL or default
+  const urlLang = new URLSearchParams(location.search).get('lang') || 'pl';
+  document.querySelectorAll('[data-lang-btn]').forEach(b => b.classList.toggle('lang-active', b.dataset.langBtn === 'pl'));
+  if (urlLang === 'en') setLang('en');
 </script>
+
+<style>
+  .lang-btn { color: rgb(100 116 139); }
+  .lang-btn.lang-active { background: linear-gradient(to right, rgb(13 148 136), rgb(8 145 178)); color: white; box-shadow: 0 2px 6px rgba(13, 148, 136, 0.3); }
+</style>
 
 </body>
 </html>
